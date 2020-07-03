@@ -1,0 +1,25 @@
+/* Add application styles & imports to this file! */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --unit-1: 4px;
+  --elevation-1: 1;
+  --min-height-carousel: calc(var(--unit-1) * 50);
+}
+
+body { 
+  margin-top: 5%;
+  height: 100vh;
+  width: 100vw;
+}
+.content {
+  border-width: 1px;
+  border-color: black;
+  border-style: dashed;
+  max-width: 318px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}

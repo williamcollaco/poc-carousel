@@ -1,0 +1,13 @@
+<app-carousel animation="slide" [slides]="slides"
+ [slideTemplateRef]="slide"></app-carousel>
+<ng-template #slide let-slide>
+	<div [ngStyle]="{
+      'background-image': 'url(' + slide.url + ')',
+      'background-repeat': 'no-repeat',
+      'background-size': 'cover',
+      'width': '280',
+      'height': '440'
+    }">
+  </div>
+  <label>{{slide.text}}</label>
+</ng-template>

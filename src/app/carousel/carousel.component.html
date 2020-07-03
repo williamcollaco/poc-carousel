@@ -1,0 +1,29 @@
+<div class="carousel">
+	<!-- slides -->
+	<ul class="slides">
+		<li (touchstart)="swipe($event, 'start')" (touchend)="swipe($event, 'end')" class="slide" *ngFor="let slide of slides; let i = index;" [@slideState]="getAnimationSlideState(i)">
+			<ng-container *ngTemplateOutlet="slideTemplateRef; context: { $implicit: slide }"></ng-container>
+		</li>
+	</ul>
+	<!-- navigations & thumbnails -->
+	<div class="navigations">
+		<ul class="ulclass">
+			<li class="liclass" *ngFor="let slide of slides; let i = index;">				
+				<div>
+					<img *ngIf="isActive(i)" src="../../assets/fill.svg" style="width: 16px; height: 16px;" />
+				</div>
+				<div>
+					<img *ngIf="!isActive(i)" src="../../assets/empty.svg" style="width: 16px; height: 16px;" />
+				</div>
+			</li>		
+		</ul>
+	</div>
+	<div class="navigations">	
+		<button type="button" style="border-style: solid; border-width: 1px;" (click)="select(activeSlides.next)">
+			<span>Continuar</span> 
+		</button>
+		<button type="button" style="border-style: solid; border-width: 1px;" *ngIf="!(activeSlides.current == (slides.length -1))">
+			<span>Skip</span> 
+    	</button>
+	</div>
+</div>
